@@ -11,6 +11,7 @@ phases:
       - node -e "console.log(v8.getHeapStatistics().heap_size_limit)"
       - node -e "console.log(v8.getHeapStatistics().total_heap_size)"
       - node -e "console.log(v8.getHeapStatistics().used_heap_size)"
+      - node -e "console.log(v8.getHeapStatistics().total_available_size)"
       - npm install
   build:
     commands:
@@ -18,6 +19,7 @@ phases:
       - npm test
       - node -e "console.log(v8.getHeapStatistics().total_heap_size/)"
       - node -e "console.log(v8.getHeapStatistics().used_heap_size/)"
+      - node -e "console.log(v8.getHeapStatistics().total_available_size)"
   post_build:
     commands:
       - echo Tests Complete
