@@ -9,9 +9,9 @@ phases:
     commands:
       - echo Installing source NPM dependencies...
       - node -e "console.log(v8.getHeapStatistics().heap_size_limit/(1024*1024))"
-      - npm install
       - node -e "console.log(v8.getHeapStatistics().total_heap_size/(1024*1024))"
       - node -e "console.log(v8.getHeapStatistics().used_heap_size/(1024*1024))"
+      - npm install
   build:
     commands:
       - echo Running Tests
