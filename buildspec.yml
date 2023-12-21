@@ -8,10 +8,12 @@ phases:
   pre_build:
     commands:
       - echo Installing source NPM dependencies...
+      - npm config set node-options=--max_old_space_size=2048
       - node -e "console.log(v8.getHeapStatistics().heap_size_limit/(1024*1024))"
       - npm install
   build:
     commands:
+      - node -e "console.log(v8.getHeapStatistics().heap_size_limit/(1024*1024))"
       - echo Running Tests
       - npm test
   post_build:
