@@ -36,7 +36,6 @@
     "mongodb": "^4.2.5",
     "mongoose": "^6.0.10",
     "mysql": "^2.18.1",
-    "postgresql": "^4.21.1",
     "sqlite3": "^5.0.3",
     "jest": "^28.1.2",
     "cypress": "^9.5.0"
