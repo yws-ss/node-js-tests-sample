@@ -1,19 +1,21 @@
 {
   "name": "large-package",
   "version": "1.0.0",
-  "description": "A package with 2GB of dependencies", 
+  "description": "A package with 2GB of dependencies",
+  
   "dependencies": {
+    
+{% for i in range(2048) %}
 
-// Generates 1.9 GB of dependencies 
-// Each dependency points to a 1MB module
+    "{{ i }}-1mb-dep": {
+      "version": "1.0.0"
+    },
 
-{% for i in range(1900) %}
-    "module-{{i}}": "1.0.0",
 {% endfor %}
+    
+    "final-100mb-dep": {
+      "version": "1.0.0" 
+    }
 
-
-// Additional 100MB to reach 2GB
-    "final-module": "1.0.0"
   }
 }
-
