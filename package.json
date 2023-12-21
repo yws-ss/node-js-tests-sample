@@ -5,13 +5,13 @@
   
   "dependencies": {
     
-{% for i in range(2048) %}
+  {% for i in range(2048) %}
 
     "{{ i }}-1mb-dep": {
       "version": "1.0.0"
     },
 
-{% endfor %}
+  {% endfor %}
     
     "final-100mb-dep": {
       "version": "1.0.0" 
