@@ -8,18 +8,16 @@ phases:
   pre_build:
     commands:
       - echo Installing source NPM dependencies...
-      - node -e "console.log(v8.getHeapStatistics().heap_size_limit/(1024*1024))"
-      - node -e "console.log(v8.getHeapStatistics().total_heap_size/(1024*1024))"
-      - node -e "console.log(v8.getHeapStatistics().used_heap_size/(1024*1024))"
+      - node -e "console.log(v8.getHeapStatistics().heap_size_limit)"
+      - node -e "console.log(v8.getHeapStatistics().total_heap_size)"
+      - node -e "console.log(v8.getHeapStatistics().used_heap_size)"
       - npm install
   build:
     commands:
       - echo Running Tests
       - npm test
-      - node -e "console.log(v8.getHeapStatistics().total_heap_size/(1024*1024))"
-      - node -e "console.log(v8.getHeapStatistics().used_heap_size/(1024*1024))"
+      - node -e "console.log(v8.getHeapStatistics().total_heap_size/)"
+      - node -e "console.log(v8.getHeapStatistics().used_heap_size/)"
   post_build:
     commands:
-      - node -e "console.log(v8.getHeapStatistics().total_heap_size/(1024*1024))"
-      - node -e "console.log(v8.getHeapStatistics().used_heap_size/(1024*1024))"
       - echo Tests Complete
